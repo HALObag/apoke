@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" />
+		<span></span>
+		<input type="button" value="提交"/>
+		<input type="button" value="刷新"/> 
+	</body>
+		<script>
+			var ainp=document.getElementsByTagName("input");
+			var span=document.getElementsByTagName("span")[0];
+			var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "a", "b", "c", "d", "e", "f", "g", "h", "i", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+			var code=4
+			ainp[2].onclick=function(){
+				var str=""
+				var maxnum=arr.length-1;
+				for(var i=0;i<code;i++){
+					var num=Math.round(Math.random()*maxnum)
+					str+=arr[num];
+				}
+				span.innerHTML=str
+			}
+			
+			ainp[1].onclick=function(){
+				if(ainp[0].value==span.innerHTML){
+					window.location="http://www.baidu.com"
+				}else{
+					ainp[0].value="";
+					alert("验证码错误")
+				}
+			}
+			
+			
+		</script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	<button>反选</button>
+		<script>
+		var body=document.getElementsByTagName("body")[0];
+		var btn=document.getElementsByTagName("button")[0];
+			var n=6;
+			var count=0;
+			for(var i=0;i<n;i++){
+				body.innerHTML+="<input type='checkbox'/>"
+			}
+			var ainp=document.getElementsByTagName("input");
+			ainp[0].onclick=function(){
+				if(this.checked){
+					for(var i=1;i<ainp.length;i++){
+						ainp[i].checked=true;
+						count=ainp.length-1;
+					}
+				}else{
+					for(var i=1;i<ainp.length;i++){
+						ainp[i].checked=false;
+					//	count=0;
+					}
+				}
+			}
+			for(var j=1;j<ainp.length;j++){
+				ainp[j].onclick=function(){
+					if(this.checked){
+						count++
+					}else{
+						ainp[0].checked=false;
+						count--
+					}
+					if(count==ainp.length-1){
+						ainp[0].checked=true;
+					}
+				}
+			}
+			
+//			btn.onclick=function(){
+//				var on=true;
+//				for(var i=0;i<ainp.length;i++){
+//					if(this.checked){
+//						this.chen
+//					}
+//				}
+//			}////反选未完成
+
+			
+		</script>
+	</body>
+</html>
